@@ -14,12 +14,8 @@ Also, what if you can’t install packages into the global `site-packages` direc
 In all these cases, virtualenv can help you. It creates an environment that has its own installation directories, that doesn’t share libraries with other virtualenv environments (and optionally doesn’t access the globally installed libraries either).
 
 ### Usage
-Install virtualenv:
-```
-$ pip install virtualenv
-```
-
-Create new virtual enviroment. For example, let's create enviroment called "my_env":
+`virtualenv` should be already installed.
+Let's create new virtual enviroment. For example, let's create enviroment called "my_env":
 ```
 $ virtualenv my_env
 ```
@@ -41,6 +37,12 @@ After installation, let's run jupyter notebook. By default jupyter notebook uses
 ```
 (my_env)$ jupyter notebook --ip 0.0.0.0 --port 12345
 ```
+If port 12345 is already used, you'll see error:
+```
+socket.error: [Errno 99] Cannot assign requested address
+```
+In this case select a different, unused port number until this error stops appearing. It is recommended to use a port greater or equal to 8000 as those port numbers are unlikely to be used by another process.
+
 Now `jupyter notebook` is running on server in virtual enviroment. Let's connect to it from our local machine using web browser. To do it, we have to set `SSH tunneling`.
 
 ## SSH tunneling
@@ -50,35 +52,35 @@ The SSH protocol includes a port forwarding mechanism that allows you to tunnel 
 
 The method you use for establishing an SSH tunnel will depend on your local computer's operating system. For Windows you have to use `PuTTY`.
 
-## PyTTY
+## PuTTY
 `PuTTY` is an open-source SSH client for Windows which can be used to connect to your server. After downloading and installing `PuTTY` on your Windows machine, you will see this window:
 
-<img src='111.PNG' width=500 height=400>
+<img src='111.PNG' width=400 height=400>
 
 You have to fill the "Host Name (or IP adress)" field using your username and host name like this:
 
-<img src='222.PNG' width=500 height=400>
+<img src='222.PNG' width=400 height=400>
 
 After filling, press the '+' button near field 'SSH' on the left side of the window. Then you will see the 'Tunnels' field. Press it.
 
-<img src='333.PNG' width=500 height=400>
+<img src='333.PNG' width=400 height=400>
 
 Then you will see new fields. You have to fill fields 'Source port' and 'Destination'.
 
-<img src='444.PNG' width=500 height=400>
+<img src='444.PNG' width=400 height=400>
 
 In the field 'Destination' enter 'localhost:12345', since port 12345 is the one that Jupyter Notebook is running on.
 In the field 'Source port' enter the port that you want to use to access Jupyter on your local machine (for example, 9999). It is recommended to use a port greater or equal to 8000 as those port numbers are unlikely to be used by another process. If choosen port is used by another process, though, select a different, unused port number.
 
-<img src='555.PNG' width=500 height=400>
+<img src='555.PNG' width=400 height=400>
 
 After filling fields 'Source port' and 'Destination' click button 'Add'. After this new line should appear in 'Forwarded ports' window:
 
-<img src='666.PNG' width=500 height=400>
+<img src='666.PNG' width=400 height=400>
 
 Then ckick the 'open' button to open the connection. After this you may see window like this:
 
-<img src='777.PNG' width=500 height=400>
+<img src='777.PNG' width=400 height=400>
 
 Press the 'Yes' button. Now the connection is established.
 
