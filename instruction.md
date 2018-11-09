@@ -41,10 +41,17 @@ After installation, let's run jupyter notebook. By default jupyter notebook uses
 ```
 (my_env)$ jupyter notebook --ip 0.0.0.0 --port 12345
 ```
-Now `jupyter notebook` is running on server in virtual enviroment. Let's connect to it from our local machine using web browser. To do it, we have to use `PuTTY`.
+Now `jupyter notebook` is running on server in virtual enviroment. Let's connect to it from our local machine using web browser. To do it, we have to set `SSH tunneling`.
+
+## SSH tunneling
+SSH tunneling is a simple and fast way to connect to the Jupyter Notebook application running on your server. Secure shell (more commonly known as SSH) is a network protocol which enables you to connect to a remote server securely over an unsecured network.
+
+The SSH protocol includes a port forwarding mechanism that allows you to tunnel certain applications running on a specific port number on a server to a specific port number on your local computer. We will learn how to securely "forward" the Jupyter Notebook application running on your server to a port on your local computer.
+
+The method you use for establishing an SSH tunnel will depend on your local computer's operating system. For Windows you have to use `PuTTY`.
 
 ## PyTTY
-Download, install and run `PuTTY`. You will see this window:
+`PuTTY` is an open-source SSH client for Windows which can be used to connect to your server. After downloading and installing `PuTTY` on your Windows machine, you will see this window:
 
 <img src='111.PNG' width=500 height=400>
 
@@ -56,7 +63,7 @@ After filling, press the '+' button near field 'SSH' on the left side of the win
 
 <img src='333.PNG' width=500 height=400>
 
-Then you will see new fields. You have to fill fields 'Source port' and 'Destination' click button 'Add'. After this new line should appear in.
+Then you will see new fields. You have to fill fields 'Source port' and 'Destination'.
 
 <img src='444.PNG' width=500 height=400>
 
@@ -95,15 +102,20 @@ Where:
 - SOURCEPORT is the number you've entered in the 'Source port' field.
 - TOKEN you have to copy from terminal in which jupyter is running.
 
-Paste composed link into your web browser. 
+Paste composed link into your web browser. Now you've connected to jupyter, running on server in virtual enviroment.
 
-That's it!
-
-
-
+## Install packages from jupyter
+Now you can type in jupyter 
+```
+!pip install packagename
+```
+and it should work.
 
 
 
 ## Usefull links:
 - Download `PuTTY`: https://www.putty.org/
+- More about virtualenv: https://virtualenv.pypa.io/en/latest/
+- Good tutorial, used to create this guide: https://www.digitalocean.com/community/tutorials/how-to-install-run-connect-to-jupyter-notebook-on-remote-server
+- Perfect explanation: https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/
 
