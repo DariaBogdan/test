@@ -29,7 +29,16 @@ After this command your terminal would look like:
 ```
 (my_env)$
 ```
-Then let's install `jupyter` in `my_env`:
+Then let's install `jupyter` in `my_env`.
+
+## Jupyter Notebook
+- *Notebook documents* are documents produced by the *Jupyter Notebook App*, which contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). Notebook documents are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
+
+- The *Jupyter Notebook App* is a server-client application that allows editing and running notebook documents via a web browser. The Jupyter Notebook App can be executed on a local desktop requiring no internet access or can be installed on a remote server and accessed through the internet.
+
+- A notebook *kernel* is a “computational engine” that executes the code contained in a Notebook document. When you open a Notebook document, the associated kernel is automatically launched. When the notebook is executed (either cell-by-cell or with menu Cell -> Run All), the kernel performs the computation and produces the results. Depending on the type of computations, the kernel may consume significant CPU and RAM. Note that the RAM is not released until the kernel is shut-down.
+
+To install `jupyter notebook` in `my_env`, type:
 ```
 (my_env)$ pip install jupyter
 ```
@@ -107,11 +116,20 @@ Where:
 Paste composed link into your web browser. Now you've connected to jupyter, running on server in virtual enviroment.
 
 ## Install packages from jupyter
-Now you can type in jupyter 
+Now there are two ways to install packages into our virtual enviroment `my_env`.
+
+1. from virtual enviroment `my_env`.
+`my_env` should be activated on server, as discribed above. If already activated `my_env` is busy (for example, jour jupyter notebook is running in that terminal), you can open another terminal on server and activate `my_env` one more time. So terminal should look like:
+```
+(my_env)$ pip install packagename
+```
+
+
+2. from jupyter. You can type in cell in jupyter notebook: 
 ```
 !pip install packagename
 ```
-and it should work.
+and it should work (jupyter notebook should be run from `my_env` on server, as discribed above).
 
 
 
@@ -120,4 +138,4 @@ and it should work.
 - More about virtualenv: https://virtualenv.pypa.io/en/latest/
 - Good tutorial, used to create this guide: https://www.digitalocean.com/community/tutorials/how-to-install-run-connect-to-jupyter-notebook-on-remote-server
 - Perfect explanation: https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/
-
+- More about jupyter: https://jupyter-notebook.readthedocs.io/en/latest/notebook.html#opening-notebooks
