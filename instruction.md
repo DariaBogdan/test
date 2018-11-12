@@ -40,7 +40,7 @@ If you see "(my_env)" written before the "$" sign in the terminal, than the `my_
 - A notebook *kernel* is a “computational engine” that executes the code contained in a Notebook document. When you open a Notebook document, the associated kernel is automatically launched. When the notebook is executed (either cell-by-cell or with menu Cell -> Run All), the kernel performs the computation and produces the results. Depending on the type of computations, the kernel may consume significant CPU and RAM. Note that the RAM is not released until the kernel is shut-down.
 
 ### Usage
-To install `jupyter notebook` in `my_env`, type:
+To install `jupyter notebook` in `my_env`, please, ensure that there is "(my_env)" written before the "$" sign in the terminal where you are going to install package, and type:
 ```
 (my_env)$ pip install jupyter
 ```
