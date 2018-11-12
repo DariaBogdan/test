@@ -91,7 +91,7 @@ After filling fields 'Source port' and 'Destination' click button 'Add'. After t
 
 Then ckick the 'open' button to open the connection. After this you may see window like this:
 
-<img src='777.PNG' width=400 height=400>
+<img src='777.PNG' width=400 height=300>
 
 Press the 'Yes' button. Now the connection is established.
 
