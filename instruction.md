@@ -29,7 +29,7 @@ After this command your terminal would look like:
 ```
 (my_env)$
 ```
-If you see "(my_env)" written before the "$" sign in the terminal, than the `my_env` virtual enviroment has been successfully activated. Now let's install `jupyter` in `my_env`.
+If you see "(my_env)" written before the "$" sign in the terminal, then the `my_env` virtual enviroment has been successfully activated. Now let's install `jupyter` in `my_env`.
 
 ## Jupyter Notebook
 ### Intro
